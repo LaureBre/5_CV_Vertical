@@ -1,0 +1,139 @@
+/* taille police par défaut en fonction de la largeur d'affichage */
+* {
+  font-size: 2.2vw;
+}
+
+@media(max-width:600px){ /* si affichage limité, texte en taille unique */
+    * {
+         font-size:3vw !important;
+    }
+    .boite {
+        min-width: 100px;
+        flex-wrap: wrap;    /* ça ne marche pas !!!! */
+           /* j'aimerais que les listes s'empilent
+           lorsqu'il n'y a pas bcp de place en largeur */
+    }
+}
+
+@media(max-width:400px){ /* si affichage micro, texte plus grand ! */
+    * {
+         font-size:4vw !important;
+    }
+}
+
+/* polices cartoon */
+@font-face {
+      font-family: 'thats_font_folksitalic';
+      src: url('../fonts/that_s_font_folks-webfont.woff2') format('woff2'),
+           url('../fonts/that_s_font_folks.ttf') format('truetype'),
+           url('../fonts/that_s_font_folks-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+}
+
+@font-face {
+  font-family: 'fooregular';
+  src: url('../fonts/foo-webfont.woff2') format('woff2'),
+       url('../fonts/foo.ttf') format('truetype'),
+       url('../fonts/foo-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* grande boîte contient les asides et le main disposés en colonnes */
+/* moyenne boîte contient le header et le main disposés en lignes */
+/* main contient les trois boîtes aux listes, disposées en colonnes */
+/* les traits ne sont dans aucune boîte, */
+
+#gdeboite, main {
+  display: flex;    /* disposition en colonnes */
+}
+
+#moyenneboite {
+  background-image: url('./../images/fondtiti-m.png');
+  background-size: contain;  /* pour que l'image tienne en largeur dans sa boîte */
+  flex:1;           /* prend toute la place disponible une fois les côtés posés */
+  z-index: 1;       /* position intermédiaire dans la pile */
+}
+
+/* les côtés */
+aside {
+  background-image: url('./../images/cage_.png');
+  background-repeat: repeat-y ; /* répéter l'image verticablement */
+  background-size: 4em;  /* taille de l'image de fond ajustable */
+  width: 4em; /* largeur de l'aside identique à la largeur de son fond */
+  z-index: 0;             /* position tout en dessous de la pile */
+}
+
+#droite {
+    right: 0px;             /* collé à droite */
+    transform: scaleX(-1);  /* miroir sur axe horizontal */
+}
+
+header {
+    width: 63%;
+    margin:auto;            /* centrer un block de largeur réduite */
+}
+
+.boite {
+  flex: 1;                 /* même largeur des boîtes */
+}
+
+.trait {                   /* simple ligne noire */
+  margin-top: 0.2em;
+  background-color: black;
+  height: 2px;
+}
+
+#titi {
+  float: left;
+  position: absolute;
+  left: 18vw;
+  width: 15vw;
+  z-index: 1;             /* position vers le bas de la pile */
+}
+
+#rominet {
+  float: right;
+  position: absolute;
+  right: 18vw;
+  width: 15vw;
+  z-index: 10;             /* position tout au-dessus de la pile */
+}
+
+h1 {
+  font-family: 'fooregular', Arial;
+  color: rgba(100, 60, 0, 0.8);
+}
+
+h2 {
+  font-weight: normal;    /* sinon h2 en gras par défaut sur les navigateurs */
+}
+
+h2, ul {
+  font-family: 'thats_font_folksitalic', Arial;
+}
+
+ul {
+  font-weight: 580;
+}
+
+header h1 {               /* taille plus grande du titre du header */
+  font-size: 8em;
+  text-align: center;     /* centré */
+  margin: 0;              /* pas besoin d'espacer en haut/bas */
+  border-bottom: 1px solid black; /* comme un "souligné" plus large ! */
+}
+
+h2 {                     /* sous-titre */
+  font-size: 1.8em;
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+  font-size: 1.3em;
+  list-style-type: none;  /*  pas de puce */
+  padding-left: 0;        /*  pas de décalage */
+  padding-right: 0;       /*  globalement pas de marge intérieure horizontale */
+}
