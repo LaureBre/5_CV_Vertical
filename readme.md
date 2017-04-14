@@ -8,3 +8,4 @@
 * Titre & sous-titre en haut
 * Photo (deux pour moi)
 * Trois catégories avec leurs listes
+* Tailles relatives

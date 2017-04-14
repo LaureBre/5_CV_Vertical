@@ -1,6 +1,6 @@
 /* taille police par défaut en fonction de la largeur d'affichage */
 * {
-  font-size: 2.2vw;
+  font-size: 2.2vw;    
 }
 
 @media(max-width:600px){ /* si affichage limité, texte en taille unique */
@@ -52,8 +52,8 @@
 #moyenneboite {
   background-image: url('./../images/fondtiti-m.png');
   background-size: contain;  /* pour que l'image tienne en largeur dans sa boîte */
-  flex:1;           /* prend toute la place disponible une fois les côtés posés */
-  z-index: 1;       /* position intermédiaire dans la pile */
+  flex: 1;          /* prend toute la place disponible une fois les côtés posés */
+  z-index: 5;       /* position intermédiaire dans la pile */
 }
 
 /* les côtés */
@@ -61,7 +61,7 @@ aside {
   background-image: url('./../images/cage_.png');
   background-repeat: repeat-y ; /* répéter l'image verticablement */
   background-size: 4em;  /* taille de l'image de fond ajustable */
-  width: 4em; /* largeur de l'aside identique à la largeur de son fond */
+  width: 4em;     /* largeur de l'aside identique à la largeur de son fond */
   z-index: 0;             /* position tout en dessous de la pile */
 }
 
@@ -75,20 +75,20 @@ header {
     margin:auto;            /* centrer un block de largeur réduite */
 }
 
-.boite {
+main div {
   flex: 1;                 /* même largeur des boîtes */
 }
 
-.trait {                   /* simple ligne noire */
+.trait {                   /* simples lignes noires */
   margin-top: 0.2em;
   background-color: black;
-  height: 2px;
+  height: 2px;             /* taille fixe */
 }
 
 #titi {
   float: left;
   position: absolute;
-  left: 18vw;
+  left: 18vw;             /* taille s'adaptant à l'affichage */
   width: 15vw;
   z-index: 1;             /* position vers le bas de la pile */
 }
@@ -98,24 +98,24 @@ header {
   position: absolute;
   right: 18vw;
   width: 15vw;
-  z-index: 10;             /* position tout au-dessus de la pile */
+  z-index: 10;           /* position tout au-dessus de la pile */
 }
 
 h1 {
   font-family: 'fooregular', Arial;
-  color: rgba(100, 60, 0, 0.8);
-}
-
-h2 {
-  font-weight: normal;    /* sinon h2 en gras par défaut sur les navigateurs */
+  color: rgba(100, 60, 0, 0.8);   /* Une certaine transparence */
 }
 
 h2, ul {
   font-family: 'thats_font_folksitalic', Arial;
 }
 
+h2 {
+  font-weight: normal;    /* sinon h2 en gras par défaut sur les navigateurs */
+}
+
 ul {
-  font-weight: 580;
+  font-weight: 600;       /* un peu gras pour voir par-dessus le fond */
 }
 
 header h1 {               /* taille plus grande du titre du header */
