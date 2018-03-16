@@ -1,3 +1,7 @@
+Contexte : formation Codeurs Web 18, Bourges 2017
+
+Exercice sur OpenClassroom
+
 # Semaine 5 toujours
 
 ## Dernier exercice OpenClassroom :
